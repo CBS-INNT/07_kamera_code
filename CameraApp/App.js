@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import CameraTest from './screens/CameraTest';
 import ImageScreen from './screens/ImageScreen';
-import CameraTestSimple from './screens/CameraTestSimple';
 
 export default function App() {
   const Stack = createStackNavigator();

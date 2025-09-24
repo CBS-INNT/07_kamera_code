@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react';
 import {
   Button,
-  StyleSheet,
   Text,
   TouchableOpacity,
   View,
   Image,
   ScrollView,
-  SafeAreaView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { CameraView, useCameraPermissions } from 'expo-camera';
+import GlobalStyle from '../style/GlobalStyle';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function CameraTest({ navigation }) {
@@ -25,7 +25,7 @@ export default function CameraTest({ navigation }) {
 
   if (!permission.granted) {
     return (
-      <View style={styles.container}>
+      <View style={GlobalStyle.container}>
         <Text style={{ textAlign: 'center' }}>
           We need your permission to show the camera
         </Text>
@@ -56,8 +56,8 @@ export default function CameraTest({ navigation }) {
   }
 
   const CameraGallery = () => (
-    <View style={styles.gallery}>
-      <Text style={styles.buttonGallery}>
+    <View style={GlobalStyle.gallery}>
+      <Text style={GlobalStyle.buttonGallery}>
         Billeder taget: {imagesArr.length}
       </Text>
       <ScrollView horizontal>
@@ -82,22 +82,22 @@ export default function CameraTest({ navigation }) {
   );
 
   return (
-    <SafeAreaView style={styles.safeview}>
-      <View style={styles.container}>
-        <CameraView ref={cameraRef} style={styles.camera} facing={facing}>
-          <View style={styles.buttonContainer}>
+    <SafeAreaView style={GlobalStyle.safeview}>
+      <View style={GlobalStyle.container}>
+        <CameraView ref={cameraRef} style={GlobalStyle.camera} facing={facing}>
+          <View style={GlobalStyle.buttonContainer}>
             {/* Flip kamera */}
-            <TouchableOpacity style={styles.btn} onPress={toggleFacing}>
+            <TouchableOpacity style={GlobalStyle.btn} onPress={toggleFacing}>
               <Ionicons name="camera-reverse-outline" size={32} color="#fff" />
             </TouchableOpacity>
 
             {/* Tag billede */}
-            <TouchableOpacity style={styles.snapbtn} onPress={snap}>
-              <Text style={styles.text}>{loading ? '...' : ''}</Text>
+            <TouchableOpacity style={GlobalStyle.snapbtn} onPress={snap}>
+              <Text style={GlobalStyle.text}>{loading ? '...' : ''}</Text>
             </TouchableOpacity>
 
             {/* Toggle galleri */}
-            <TouchableOpacity style={styles.btn} onPress={toggleGallery}>
+            <TouchableOpacity style={GlobalStyle.btn} onPress={toggleGallery}>
               <Ionicons name="images-outline" size={32} color="#fff" />
             </TouchableOpacity>
           </View>
@@ -107,63 +107,3 @@ export default function CameraTest({ navigation }) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  safeview: {
-    backgroundColor: 'black',
-    flex: 1,
-    width: '100%',
-  },
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-  },
-  camera: {
-    flex: 1,
-    width: '100%',
-    justifyContent: 'flex-end',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    padding: 16,
-    backgroundColor: 'transparent',
-  },
-  text: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: 'white',
-    alignSelf: 'center',
-  },
-  buttonGallery: {
-    fontSize: 15,
-    color: 'white',
-    padding: 10,
-    borderRadius: 10,
-    alignSelf: 'center',
-  },
-  gallery: {
-    flex: 0.25,
-    paddingTop: 10,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'black',
-  },
-  snapbtn: {
-    backgroundColor: 'rgba(255, 255, 255, 0.25)',
-    height: 80,
-    width: 80,
-    borderRadius: 40,
-    borderWidth: 4,
-    borderColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  btn: {
-    backgroundColor: 'rgba(255, 255, 255, 0.25)',
-    borderRadius: 40,
-    padding: 12,
-    alignSelf: 'center',
-  },
-});

@@ -1,80 +1,70 @@
-const styles = StyleSheet.create({
+import { StyleSheet } from 'react-native';
+ 
+const GlobalStyles = StyleSheet.create({
     container: {
       flex: 1,
+      backgroundColor: '#000',
       justifyContent: 'center',
-      width: '100%',
-      marginTop: 0,
-      borderRadius: 20,
-      backgroundColor: 'black',
-      overflow: 'hidden',
-      
+      alignItems: 'center',
     },
-      camera: {
-      flex: 1,
-      overflow: 'hidden',
+    img: {
       width: '100%',
-      flexDirection: 'column',
+      height: '100%',
+      resizeMode: 'contain',
+    },
+    safeview: {
+      backgroundColor: 'black',
+      flex: 1,
+      width: '100%',
+    },
+    camera: {
+      flex: 1,
+      width: '100%',
       justifyContent: 'flex-end',
     },
     buttonContainer: {
       flexDirection: 'row',
+      justifyContent: 'space-around',
+      padding: 16,
       backgroundColor: 'transparent',
-      margin: 32,
-      alignSelf: 'center',
     },
-    
     text: {
       fontSize: 16,
-      fontWeight: 'semibold',
+      fontWeight: '600',
       color: 'white',
       alignSelf: 'center',
     },
     buttonGallery: {
       fontSize: 15,
-      color:"white",
+      color: 'white',
       padding: 10,
-      borderRadius:10,
+      borderRadius: 10,
       alignSelf: 'center',
-      },
-      gallery:{
-          flex: 0.2,
-          paddingTop:10,
-          width:"100%",
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'black',
-      },
-      safeview:{
-          backgroundColor: 'black',
-          flex: 1,
-          justifyContent: 'center',
-          width: '100%',
-      },
-      snapbtn:{
-          backgroundColor: 'rgba(255, 255, 255, 0.25)',
-          height: 80,
-          width: 80,
-          borderRadius: 100,
-          padding: 10,
-          margin: 5,
-          alignSelf: 'center',
-          borderWidth: 4,
-          borderColor: 'white',
-          justifyContent: 'center',
-      },
-      flipbtn: {
-          backgroundColor: 'rgba(255, 255, 255, 0.25)',
-          borderRadius: 100,
-          
-          padding: 5,
-          alignSelf: 'baseline',
-          justifyContent: 'center',
-      },
-      gallerybtn: {
-          backgroundColor: 'rgba(255, 255, 255, 0.25)',
-          borderRadius: 100,
-          padding: 5,
-          alignSelf: 'flex-end',
-          justifyContent: 'center',
-      },
+    },
+    gallery: {
+      flex: 0.25,
+      paddingTop: 10,
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'black',
+    },
+    snapbtn: {
+      backgroundColor: 'rgba(255, 255, 255, 0.25)',
+      height: 80,
+      width: 80,
+      borderRadius: 40,
+      borderWidth: 4,
+      borderColor: 'white',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    btn: {
+      backgroundColor: 'rgba(255, 255, 255, 0.25)',
+      borderRadius: 40,
+      padding: 12,
+      alignSelf: 'center',
+    },
   });
+
+  export default GlobalStyles;

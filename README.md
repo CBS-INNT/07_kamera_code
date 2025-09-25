@@ -2,7 +2,7 @@
 
 ## Besvarelse af refleksionsspørgsmålene til ImageScreen.js
 
-### 1. Hvorfor bruger vi route.params.image her?
+### 1. Hvorfor bruger vi route.params her?
 - Vi bruger route.params.image, fordi vi skal hente billedets URI, som blev sendt med navigationen.
 
 Uddybning:

@@ -1,4 +1,4 @@
-# 08_kamera_code
+# 07_kamera_code
 
 ## Besvarelse af refleksionsspørgsmålene til ImageScreen.js
 
